@@ -1,0 +1,83 @@
+{
+  "case_id": "sched-short-hole",
+  "windows": [
+    {
+      "window_id": "w1",
+      "start": 0,
+      "duration": 30
+    },
+    {
+      "window_id": "w2",
+      "start": 40,
+      "duration": 30
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "tg1",
+      "device": "dev0",
+      "range": {
+        "start": 0,
+        "end": 65536
+      },
+      "deadline": 100,
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "requirements": [
+        {
+          "kind": "invalidate",
+          "slot": "slot0",
+          "queue_no": 0,
+          "range": {
+            "start": 16384,
+            "end": 32768
+          }
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "command_id": "hole-a",
+      "kind": "invalidate",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 4,
+      "range": {
+        "start": 16384,
+        "end": 24576
+      },
+      "windows": [
+        {
+          "window_id": "w1",
+          "offset": 0
+        },
+        {
+          "window_id": "w2",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "hole-b",
+      "kind": "invalidate",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 4,
+      "range": {
+        "start": 24576,
+        "end": 32768
+      },
+      "windows": [
+        {
+          "window_id": "w1",
+          "offset": 4
+        },
+        {
+          "window_id": "w2",
+          "offset": 4
+        }
+      ]
+    }
+  ]
+}

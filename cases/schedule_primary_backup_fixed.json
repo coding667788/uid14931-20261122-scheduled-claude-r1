@@ -1,0 +1,130 @@
+{
+  "case_id": "sched-primary-backup-fixed",
+  "windows": [
+    {
+      "window_id": "primary",
+      "start": 0,
+      "duration": 25,
+      "unresponsive_queues": [
+        {
+          "slot": "slot0",
+          "queue_no": 0
+        }
+      ]
+    },
+    {
+      "window_id": "backup",
+      "start": 40,
+      "duration": 25,
+      "unresponsive_queues": [
+        {
+          "slot": "slot1",
+          "queue_no": 1
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "tg1",
+      "device": "dev0",
+      "range": {
+        "start": 0,
+        "end": 8192
+      },
+      "deadline": 120,
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "requirements": [
+        {
+          "kind": "invalidate",
+          "slot": "slot0",
+          "queue_no": 0,
+          "range": {
+            "start": 0,
+            "end": 4096
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot1",
+          "queue_no": 1,
+          "range": {
+            "start": 4096,
+            "end": 8192
+          }
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "command_id": "q0-in-primary",
+      "kind": "invalidate",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 5,
+      "range": {
+        "start": 0,
+        "end": 4096
+      },
+      "windows": [
+        {
+          "window_id": "primary",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q0-in-backup",
+      "kind": "invalidate",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 5,
+      "range": {
+        "start": 0,
+        "end": 4096
+      },
+      "windows": [
+        {
+          "window_id": "backup",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q1-in-primary",
+      "kind": "invalidate",
+      "slot": "slot1",
+      "queue_no": 1,
+      "duration": 5,
+      "range": {
+        "start": 4096,
+        "end": 8192
+      },
+      "windows": [
+        {
+          "window_id": "primary",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q1-in-backup",
+      "kind": "invalidate",
+      "slot": "slot1",
+      "queue_no": 1,
+      "duration": 5,
+      "range": {
+        "start": 4096,
+        "end": 8192
+      },
+      "windows": [
+        {
+          "window_id": "backup",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}

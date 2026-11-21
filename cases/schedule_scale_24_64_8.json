@@ -1,0 +1,1325 @@
+{
+  "case_id": "sched-scale-24-64-8",
+  "windows": [
+    {
+      "window_id": "w1",
+      "start": 0,
+      "duration": 40,
+      "unresponsive_queues": [
+        {
+          "slot": "slot0",
+          "queue_no": 0
+        },
+        {
+          "slot": "slot1",
+          "queue_no": 1
+        }
+      ]
+    },
+    {
+      "window_id": "w2",
+      "start": 60,
+      "duration": 40,
+      "unresponsive_queues": [
+        {
+          "slot": "slot2",
+          "queue_no": 2
+        },
+        {
+          "slot": "slot3",
+          "queue_no": 3
+        }
+      ]
+    },
+    {
+      "window_id": "w3",
+      "start": 120,
+      "duration": 40,
+      "unresponsive_queues": [
+        {
+          "slot": "slot4",
+          "queue_no": 4
+        },
+        {
+          "slot": "slot5",
+          "queue_no": 5
+        }
+      ]
+    },
+    {
+      "window_id": "w4",
+      "start": 180,
+      "duration": 40,
+      "unresponsive_queues": [
+        {
+          "slot": "slot6",
+          "queue_no": 6
+        },
+        {
+          "slot": "slot7",
+          "queue_no": 7
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "tg-q0",
+      "device": "dev0",
+      "range": {
+        "start": 0,
+        "end": 233472
+      },
+      "deadline": 260,
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "requirements": [
+        {
+          "kind": "invalidate",
+          "slot": "slot0",
+          "queue_no": 0,
+          "range": {
+            "start": 0,
+            "end": 4096
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot0",
+          "queue_no": 0,
+          "range": {
+            "start": 32768,
+            "end": 36864
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot0",
+          "queue_no": 0,
+          "range": {
+            "start": 65536,
+            "end": 69632
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot0",
+          "queue_no": 0,
+          "range": {
+            "start": 98304,
+            "end": 102400
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot0",
+          "queue_no": 0,
+          "range": {
+            "start": 131072,
+            "end": 135168
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot0",
+          "queue_no": 0,
+          "range": {
+            "start": 163840,
+            "end": 167936
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot0",
+          "queue_no": 0,
+          "range": {
+            "start": 196608,
+            "end": 200704
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot0",
+          "queue_no": 0,
+          "range": {
+            "start": 229376,
+            "end": 233472
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "tg-q1",
+      "device": "dev0",
+      "range": {
+        "start": 4096,
+        "end": 237568
+      },
+      "deadline": 260,
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "requirements": [
+        {
+          "kind": "invalidate",
+          "slot": "slot1",
+          "queue_no": 1,
+          "range": {
+            "start": 4096,
+            "end": 8192
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot1",
+          "queue_no": 1,
+          "range": {
+            "start": 36864,
+            "end": 40960
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot1",
+          "queue_no": 1,
+          "range": {
+            "start": 69632,
+            "end": 73728
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot1",
+          "queue_no": 1,
+          "range": {
+            "start": 102400,
+            "end": 106496
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot1",
+          "queue_no": 1,
+          "range": {
+            "start": 135168,
+            "end": 139264
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot1",
+          "queue_no": 1,
+          "range": {
+            "start": 167936,
+            "end": 172032
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot1",
+          "queue_no": 1,
+          "range": {
+            "start": 200704,
+            "end": 204800
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot1",
+          "queue_no": 1,
+          "range": {
+            "start": 233472,
+            "end": 237568
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "tg-q2",
+      "device": "dev0",
+      "range": {
+        "start": 8192,
+        "end": 241664
+      },
+      "deadline": 260,
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "requirements": [
+        {
+          "kind": "invalidate",
+          "slot": "slot2",
+          "queue_no": 2,
+          "range": {
+            "start": 8192,
+            "end": 12288
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot2",
+          "queue_no": 2,
+          "range": {
+            "start": 40960,
+            "end": 45056
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot2",
+          "queue_no": 2,
+          "range": {
+            "start": 73728,
+            "end": 77824
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot2",
+          "queue_no": 2,
+          "range": {
+            "start": 106496,
+            "end": 110592
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot2",
+          "queue_no": 2,
+          "range": {
+            "start": 139264,
+            "end": 143360
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot2",
+          "queue_no": 2,
+          "range": {
+            "start": 172032,
+            "end": 176128
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot2",
+          "queue_no": 2,
+          "range": {
+            "start": 204800,
+            "end": 208896
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot2",
+          "queue_no": 2,
+          "range": {
+            "start": 237568,
+            "end": 241664
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "tg-q3",
+      "device": "dev0",
+      "range": {
+        "start": 12288,
+        "end": 245760
+      },
+      "deadline": 260,
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "requirements": [
+        {
+          "kind": "invalidate",
+          "slot": "slot3",
+          "queue_no": 3,
+          "range": {
+            "start": 12288,
+            "end": 16384
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot3",
+          "queue_no": 3,
+          "range": {
+            "start": 45056,
+            "end": 49152
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot3",
+          "queue_no": 3,
+          "range": {
+            "start": 77824,
+            "end": 81920
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot3",
+          "queue_no": 3,
+          "range": {
+            "start": 110592,
+            "end": 114688
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot3",
+          "queue_no": 3,
+          "range": {
+            "start": 143360,
+            "end": 147456
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot3",
+          "queue_no": 3,
+          "range": {
+            "start": 176128,
+            "end": 180224
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot3",
+          "queue_no": 3,
+          "range": {
+            "start": 208896,
+            "end": 212992
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot3",
+          "queue_no": 3,
+          "range": {
+            "start": 241664,
+            "end": 245760
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "tg-q4",
+      "device": "dev0",
+      "range": {
+        "start": 16384,
+        "end": 249856
+      },
+      "deadline": 260,
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "requirements": [
+        {
+          "kind": "invalidate",
+          "slot": "slot4",
+          "queue_no": 4,
+          "range": {
+            "start": 16384,
+            "end": 20480
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot4",
+          "queue_no": 4,
+          "range": {
+            "start": 49152,
+            "end": 53248
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot4",
+          "queue_no": 4,
+          "range": {
+            "start": 81920,
+            "end": 86016
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot4",
+          "queue_no": 4,
+          "range": {
+            "start": 114688,
+            "end": 118784
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot4",
+          "queue_no": 4,
+          "range": {
+            "start": 147456,
+            "end": 151552
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot4",
+          "queue_no": 4,
+          "range": {
+            "start": 180224,
+            "end": 184320
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot4",
+          "queue_no": 4,
+          "range": {
+            "start": 212992,
+            "end": 217088
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot4",
+          "queue_no": 4,
+          "range": {
+            "start": 245760,
+            "end": 249856
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "tg-q5",
+      "device": "dev0",
+      "range": {
+        "start": 20480,
+        "end": 253952
+      },
+      "deadline": 260,
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "requirements": [
+        {
+          "kind": "invalidate",
+          "slot": "slot5",
+          "queue_no": 5,
+          "range": {
+            "start": 20480,
+            "end": 24576
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot5",
+          "queue_no": 5,
+          "range": {
+            "start": 53248,
+            "end": 57344
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot5",
+          "queue_no": 5,
+          "range": {
+            "start": 86016,
+            "end": 90112
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot5",
+          "queue_no": 5,
+          "range": {
+            "start": 118784,
+            "end": 122880
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot5",
+          "queue_no": 5,
+          "range": {
+            "start": 151552,
+            "end": 155648
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot5",
+          "queue_no": 5,
+          "range": {
+            "start": 184320,
+            "end": 188416
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot5",
+          "queue_no": 5,
+          "range": {
+            "start": 217088,
+            "end": 221184
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot5",
+          "queue_no": 5,
+          "range": {
+            "start": 249856,
+            "end": 253952
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "tg-q6",
+      "device": "dev0",
+      "range": {
+        "start": 24576,
+        "end": 258048
+      },
+      "deadline": 260,
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "requirements": [
+        {
+          "kind": "invalidate",
+          "slot": "slot6",
+          "queue_no": 6,
+          "range": {
+            "start": 24576,
+            "end": 28672
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot6",
+          "queue_no": 6,
+          "range": {
+            "start": 57344,
+            "end": 61440
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot6",
+          "queue_no": 6,
+          "range": {
+            "start": 90112,
+            "end": 94208
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot6",
+          "queue_no": 6,
+          "range": {
+            "start": 122880,
+            "end": 126976
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot6",
+          "queue_no": 6,
+          "range": {
+            "start": 155648,
+            "end": 159744
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot6",
+          "queue_no": 6,
+          "range": {
+            "start": 188416,
+            "end": 192512
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot6",
+          "queue_no": 6,
+          "range": {
+            "start": 221184,
+            "end": 225280
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot6",
+          "queue_no": 6,
+          "range": {
+            "start": 253952,
+            "end": 258048
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "tg-q7",
+      "device": "dev0",
+      "range": {
+        "start": 28672,
+        "end": 262144
+      },
+      "deadline": 260,
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "requirements": [
+        {
+          "kind": "invalidate",
+          "slot": "slot7",
+          "queue_no": 7,
+          "range": {
+            "start": 28672,
+            "end": 32768
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot7",
+          "queue_no": 7,
+          "range": {
+            "start": 61440,
+            "end": 65536
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot7",
+          "queue_no": 7,
+          "range": {
+            "start": 94208,
+            "end": 98304
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot7",
+          "queue_no": 7,
+          "range": {
+            "start": 126976,
+            "end": 131072
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot7",
+          "queue_no": 7,
+          "range": {
+            "start": 159744,
+            "end": 163840
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot7",
+          "queue_no": 7,
+          "range": {
+            "start": 192512,
+            "end": 196608
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot7",
+          "queue_no": 7,
+          "range": {
+            "start": 225280,
+            "end": 229376
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot7",
+          "queue_no": 7,
+          "range": {
+            "start": 258048,
+            "end": 262144
+          }
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "command_id": "q0-g0",
+      "kind": "invalidate",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 3,
+      "range": {
+        "start": 0,
+        "end": 233472
+      },
+      "resources": [
+        "link0"
+      ],
+      "windows": [
+        {
+          "window_id": "w1",
+          "offset": 0
+        },
+        {
+          "window_id": "w3",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q0-g1",
+      "kind": "invalidate",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 4,
+      "range": {
+        "start": 0,
+        "end": 233472
+      },
+      "resources": [
+        "link0"
+      ],
+      "windows": [
+        {
+          "window_id": "w3",
+          "offset": 0
+        },
+        {
+          "window_id": "w1",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q0-g2",
+      "kind": "invalidate",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 5,
+      "range": {
+        "start": 0,
+        "end": 233472
+      },
+      "resources": [
+        "link0"
+      ],
+      "windows": [
+        {
+          "window_id": "w1",
+          "offset": 0
+        },
+        {
+          "window_id": "w3",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q1-g0",
+      "kind": "invalidate",
+      "slot": "slot1",
+      "queue_no": 1,
+      "duration": 3,
+      "range": {
+        "start": 4096,
+        "end": 237568
+      },
+      "resources": [
+        "link1"
+      ],
+      "windows": [
+        {
+          "window_id": "w1",
+          "offset": 0
+        },
+        {
+          "window_id": "w3",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q1-g1",
+      "kind": "invalidate",
+      "slot": "slot1",
+      "queue_no": 1,
+      "duration": 4,
+      "range": {
+        "start": 4096,
+        "end": 237568
+      },
+      "resources": [
+        "link1"
+      ],
+      "windows": [
+        {
+          "window_id": "w3",
+          "offset": 0
+        },
+        {
+          "window_id": "w1",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q1-g2",
+      "kind": "invalidate",
+      "slot": "slot1",
+      "queue_no": 1,
+      "duration": 5,
+      "range": {
+        "start": 4096,
+        "end": 237568
+      },
+      "resources": [
+        "link1"
+      ],
+      "windows": [
+        {
+          "window_id": "w1",
+          "offset": 0
+        },
+        {
+          "window_id": "w3",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q2-g0",
+      "kind": "invalidate",
+      "slot": "slot2",
+      "queue_no": 2,
+      "duration": 3,
+      "range": {
+        "start": 8192,
+        "end": 241664
+      },
+      "resources": [
+        "link0"
+      ],
+      "windows": [
+        {
+          "window_id": "w2",
+          "offset": 0
+        },
+        {
+          "window_id": "w4",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q2-g1",
+      "kind": "invalidate",
+      "slot": "slot2",
+      "queue_no": 2,
+      "duration": 4,
+      "range": {
+        "start": 8192,
+        "end": 241664
+      },
+      "resources": [
+        "link0"
+      ],
+      "windows": [
+        {
+          "window_id": "w4",
+          "offset": 0
+        },
+        {
+          "window_id": "w2",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q2-g2",
+      "kind": "invalidate",
+      "slot": "slot2",
+      "queue_no": 2,
+      "duration": 5,
+      "range": {
+        "start": 8192,
+        "end": 241664
+      },
+      "resources": [
+        "link0"
+      ],
+      "windows": [
+        {
+          "window_id": "w2",
+          "offset": 0
+        },
+        {
+          "window_id": "w4",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q3-g0",
+      "kind": "invalidate",
+      "slot": "slot3",
+      "queue_no": 3,
+      "duration": 3,
+      "range": {
+        "start": 12288,
+        "end": 245760
+      },
+      "resources": [
+        "link1"
+      ],
+      "windows": [
+        {
+          "window_id": "w2",
+          "offset": 0
+        },
+        {
+          "window_id": "w4",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q3-g1",
+      "kind": "invalidate",
+      "slot": "slot3",
+      "queue_no": 3,
+      "duration": 4,
+      "range": {
+        "start": 12288,
+        "end": 245760
+      },
+      "resources": [
+        "link1"
+      ],
+      "windows": [
+        {
+          "window_id": "w4",
+          "offset": 0
+        },
+        {
+          "window_id": "w2",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q3-g2",
+      "kind": "invalidate",
+      "slot": "slot3",
+      "queue_no": 3,
+      "duration": 5,
+      "range": {
+        "start": 12288,
+        "end": 245760
+      },
+      "resources": [
+        "link1"
+      ],
+      "windows": [
+        {
+          "window_id": "w2",
+          "offset": 0
+        },
+        {
+          "window_id": "w4",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q4-g0",
+      "kind": "invalidate",
+      "slot": "slot4",
+      "queue_no": 4,
+      "duration": 3,
+      "range": {
+        "start": 16384,
+        "end": 249856
+      },
+      "resources": [
+        "link0"
+      ],
+      "windows": [
+        {
+          "window_id": "w3",
+          "offset": 0
+        },
+        {
+          "window_id": "w1",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q4-g1",
+      "kind": "invalidate",
+      "slot": "slot4",
+      "queue_no": 4,
+      "duration": 4,
+      "range": {
+        "start": 16384,
+        "end": 249856
+      },
+      "resources": [
+        "link0"
+      ],
+      "windows": [
+        {
+          "window_id": "w1",
+          "offset": 0
+        },
+        {
+          "window_id": "w3",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q4-g2",
+      "kind": "invalidate",
+      "slot": "slot4",
+      "queue_no": 4,
+      "duration": 5,
+      "range": {
+        "start": 16384,
+        "end": 249856
+      },
+      "resources": [
+        "link0"
+      ],
+      "windows": [
+        {
+          "window_id": "w3",
+          "offset": 0
+        },
+        {
+          "window_id": "w1",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q5-g0",
+      "kind": "invalidate",
+      "slot": "slot5",
+      "queue_no": 5,
+      "duration": 3,
+      "range": {
+        "start": 20480,
+        "end": 253952
+      },
+      "resources": [
+        "link1"
+      ],
+      "windows": [
+        {
+          "window_id": "w3",
+          "offset": 0
+        },
+        {
+          "window_id": "w1",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q5-g1",
+      "kind": "invalidate",
+      "slot": "slot5",
+      "queue_no": 5,
+      "duration": 4,
+      "range": {
+        "start": 20480,
+        "end": 253952
+      },
+      "resources": [
+        "link1"
+      ],
+      "windows": [
+        {
+          "window_id": "w1",
+          "offset": 0
+        },
+        {
+          "window_id": "w3",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q5-g2",
+      "kind": "invalidate",
+      "slot": "slot5",
+      "queue_no": 5,
+      "duration": 5,
+      "range": {
+        "start": 20480,
+        "end": 253952
+      },
+      "resources": [
+        "link1"
+      ],
+      "windows": [
+        {
+          "window_id": "w3",
+          "offset": 0
+        },
+        {
+          "window_id": "w1",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q6-g0",
+      "kind": "invalidate",
+      "slot": "slot6",
+      "queue_no": 6,
+      "duration": 3,
+      "range": {
+        "start": 24576,
+        "end": 258048
+      },
+      "resources": [
+        "link0"
+      ],
+      "windows": [
+        {
+          "window_id": "w4",
+          "offset": 0
+        },
+        {
+          "window_id": "w2",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q6-g1",
+      "kind": "invalidate",
+      "slot": "slot6",
+      "queue_no": 6,
+      "duration": 4,
+      "range": {
+        "start": 24576,
+        "end": 258048
+      },
+      "resources": [
+        "link0"
+      ],
+      "windows": [
+        {
+          "window_id": "w2",
+          "offset": 0
+        },
+        {
+          "window_id": "w4",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q6-g2",
+      "kind": "invalidate",
+      "slot": "slot6",
+      "queue_no": 6,
+      "duration": 5,
+      "range": {
+        "start": 24576,
+        "end": 258048
+      },
+      "resources": [
+        "link0"
+      ],
+      "windows": [
+        {
+          "window_id": "w4",
+          "offset": 0
+        },
+        {
+          "window_id": "w2",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q7-g0",
+      "kind": "invalidate",
+      "slot": "slot7",
+      "queue_no": 7,
+      "duration": 3,
+      "range": {
+        "start": 28672,
+        "end": 262144
+      },
+      "resources": [
+        "link1"
+      ],
+      "windows": [
+        {
+          "window_id": "w4",
+          "offset": 0
+        },
+        {
+          "window_id": "w2",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q7-g1",
+      "kind": "invalidate",
+      "slot": "slot7",
+      "queue_no": 7,
+      "duration": 4,
+      "range": {
+        "start": 28672,
+        "end": 262144
+      },
+      "resources": [
+        "link1"
+      ],
+      "windows": [
+        {
+          "window_id": "w2",
+          "offset": 0
+        },
+        {
+          "window_id": "w4",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "q7-g2",
+      "kind": "invalidate",
+      "slot": "slot7",
+      "queue_no": 7,
+      "duration": 5,
+      "range": {
+        "start": 28672,
+        "end": 262144
+      },
+      "resources": [
+        "link1"
+      ],
+      "windows": [
+        {
+          "window_id": "w4",
+          "offset": 0
+        },
+        {
+          "window_id": "w2",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}

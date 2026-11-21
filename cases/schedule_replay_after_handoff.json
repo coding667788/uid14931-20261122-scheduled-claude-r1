@@ -1,0 +1,118 @@
+{
+  "case_id": "sched-replay-after-handoff",
+  "windows": [
+    {
+      "window_id": "w1",
+      "start": 0,
+      "duration": 20,
+      "unresponsive_queues": [
+        {
+          "slot": "slot0",
+          "queue_no": 0
+        }
+      ]
+    },
+    {
+      "window_id": "w2",
+      "start": 30,
+      "duration": 20,
+      "unresponsive_queues": [
+        {
+          "slot": "slot0",
+          "queue_no": 0
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "tg1",
+      "device": "dev0",
+      "range": {
+        "start": 0,
+        "end": 4096
+      },
+      "deadline": 80,
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "requirements": [
+        {
+          "kind": "invalidate",
+          "slot": "slot0",
+          "queue_no": 0,
+          "range": {
+            "start": 0,
+            "end": 4096
+          }
+        },
+        {
+          "kind": "drain",
+          "slot": "slot0",
+          "queue_no": 0
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "command_id": "inv-1",
+      "kind": "invalidate",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 5,
+      "range": {
+        "start": 0,
+        "end": 4096
+      },
+      "windows": [
+        {
+          "window_id": "w1",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "inv-2",
+      "kind": "invalidate",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 5,
+      "range": {
+        "start": 0,
+        "end": 4096
+      },
+      "windows": [
+        {
+          "window_id": "w2",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "drain-1",
+      "kind": "drain",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 3,
+      "windows": [
+        {
+          "window_id": "w1",
+          "offset": 8
+        }
+      ]
+    },
+    {
+      "command_id": "drain-2",
+      "kind": "drain",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 3,
+      "windows": [
+        {
+          "window_id": "w2",
+          "offset": 8
+        }
+      ]
+    }
+  ]
+}

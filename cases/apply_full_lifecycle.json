@@ -1,0 +1,156 @@
+{
+  "case_id": "apply-full-lifecycle",
+  "events": [
+    {
+      "id": "bind-d0-q0-i1-g1",
+      "type": "bind",
+      "device": "dev0",
+      "slot": "slot0",
+      "queue_no": 0,
+      "instance": 1,
+      "gen": 1,
+      "range": {
+        "start": 0,
+        "end": 65536
+      }
+    },
+    {
+      "id": "map-d0-g1-wide",
+      "type": "map",
+      "device": "dev0",
+      "slot": "slot0",
+      "queue_no": 0,
+      "instance": 1,
+      "gen": 1,
+      "owner": "tenant-alpha",
+      "range": {
+        "start": 0,
+        "end": 65536
+      }
+    },
+    {
+      "id": "pub-ce-wide",
+      "type": "cache_publish",
+      "device": "dev0",
+      "slot": "slot0",
+      "queue_no": 0,
+      "instance": 1,
+      "gen": 1,
+      "entry_id": "cache-wide",
+      "range": {
+        "start": 0,
+        "end": 65536
+      }
+    },
+    {
+      "id": "bind-d0-q0-i1-g2",
+      "type": "bind",
+      "device": "dev0",
+      "slot": "slot0",
+      "queue_no": 0,
+      "instance": 1,
+      "gen": 2,
+      "range": {
+        "start": 16384,
+        "end": 32768
+      }
+    },
+    {
+      "id": "map-d0-g2-middle",
+      "type": "map",
+      "device": "dev0",
+      "slot": "slot0",
+      "queue_no": 0,
+      "instance": 1,
+      "gen": 2,
+      "owner": "tenant-alpha",
+      "range": {
+        "start": 16384,
+        "end": 32768
+      }
+    },
+    {
+      "id": "ack-hole-left",
+      "type": "invalidate_ack",
+      "device": "dev0",
+      "slot": "slot0",
+      "queue_no": 0,
+      "instance": 1,
+      "gen": 1,
+      "range": {
+        "start": 16384,
+        "end": 24576
+      }
+    },
+    {
+      "id": "ack-hole-right",
+      "type": "invalidate_ack",
+      "device": "dev0",
+      "slot": "slot0",
+      "queue_no": 0,
+      "instance": 1,
+      "gen": 1,
+      "range": {
+        "start": 24576,
+        "end": 32768
+      }
+    },
+    {
+      "id": "reg-cmd-1",
+      "type": "register_command",
+      "device": "dev0",
+      "slot": "slot0",
+      "queue_no": 0,
+      "instance": 1,
+      "gen": 2,
+      "cmd_id": "cmd-1",
+      "range": {
+        "start": 16384,
+        "end": 20480
+      }
+    },
+    {
+      "id": "revoke-g2-middle",
+      "type": "revoke",
+      "device": "dev0",
+      "gen": 2,
+      "range": {
+        "start": 16384,
+        "end": 32768
+      }
+    },
+    {
+      "id": "receipt-cmd-1",
+      "type": "command_receipt",
+      "cmd_id": "cmd-1",
+      "status": "completed"
+    },
+    {
+      "id": "ack-g2-full",
+      "type": "invalidate_ack",
+      "device": "dev0",
+      "slot": "slot0",
+      "queue_no": 0,
+      "instance": 1,
+      "gen": 2,
+      "range": {
+        "start": 16384,
+        "end": 32768
+      }
+    },
+    {
+      "id": "handoff-middle",
+      "type": "handoff_request",
+      "request_id": "req-handoff-middle",
+      "device": "dev0",
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "expected_source_version": 3,
+      "new_gen": 3,
+      "range": {
+        "start": 16384,
+        "end": 32768
+      }
+    }
+  ]
+}

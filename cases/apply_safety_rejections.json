@@ -1,0 +1,98 @@
+{
+  "case_id": "apply-safety-rejections",
+  "events": [
+    {
+      "id": "b",
+      "type": "bind",
+      "device": "dev0",
+      "slot": "slot0",
+      "queue_no": 0,
+      "instance": 1,
+      "gen": 1,
+      "range": {
+        "start": 0,
+        "end": 4096
+      }
+    },
+    {
+      "id": "m",
+      "type": "map",
+      "device": "dev0",
+      "slot": "slot0",
+      "queue_no": 0,
+      "instance": 1,
+      "gen": 1,
+      "owner": "tenant-alpha",
+      "range": {
+        "start": 0,
+        "end": 4096
+      }
+    },
+    {
+      "id": "pub",
+      "type": "cache_publish",
+      "device": "dev0",
+      "slot": "slot0",
+      "queue_no": 0,
+      "instance": 1,
+      "gen": 1,
+      "entry_id": "ce",
+      "range": {
+        "start": 0,
+        "end": 4096
+      }
+    },
+    {
+      "id": "rev",
+      "type": "revoke",
+      "device": "dev0",
+      "gen": 1,
+      "range": {
+        "start": 0,
+        "end": 4096
+      }
+    },
+    {
+      "id": "late-reg",
+      "type": "register_command",
+      "device": "dev0",
+      "slot": "slot0",
+      "queue_no": 0,
+      "instance": 1,
+      "gen": 1,
+      "cmd_id": "late-cmd",
+      "range": {
+        "start": 0,
+        "end": 100
+      }
+    },
+    {
+      "id": "early-handoff",
+      "type": "handoff_request",
+      "request_id": "req-early",
+      "device": "dev0",
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "expected_source_version": 2,
+      "new_gen": 2,
+      "range": {
+        "start": 0,
+        "end": 4096
+      }
+    },
+    {
+      "id": "stale-version",
+      "type": "handoff_request",
+      "request_id": "req-stale",
+      "device": "dev0",
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "expected_source_version": 1,
+      "new_gen": 2,
+      "range": {
+        "start": 0,
+        "end": 4096
+      }
+    }
+  ]
+}

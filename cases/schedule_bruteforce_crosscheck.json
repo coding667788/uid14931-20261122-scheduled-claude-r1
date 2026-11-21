@@ -1,0 +1,135 @@
+{
+  "case_id": "sched-brute-crosscheck",
+  "windows": [
+    {
+      "window_id": "w1",
+      "start": 0,
+      "duration": 20,
+      "unresponsive_queues": [
+        {
+          "slot": "slot0",
+          "queue_no": 0
+        }
+      ]
+    },
+    {
+      "window_id": "w2",
+      "start": 30,
+      "duration": 20,
+      "unresponsive_queues": [
+        {
+          "slot": "slot1",
+          "queue_no": 1
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "tg1",
+      "device": "dev0",
+      "range": {
+        "start": 0,
+        "end": 4096
+      },
+      "deadline": 100,
+      "from_owner": "a",
+      "to_owner": "b",
+      "requirements": [
+        {
+          "kind": "invalidate",
+          "slot": "slot0",
+          "queue_no": 0,
+          "range": {
+            "start": 0,
+            "end": 4096
+          }
+        },
+        {
+          "kind": "drain",
+          "slot": "slot1",
+          "queue_no": 1
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "command_id": "i-w1",
+      "kind": "invalidate",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 4,
+      "range": {
+        "start": 0,
+        "end": 4096
+      },
+      "windows": [
+        {
+          "window_id": "w1",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "i-w2",
+      "kind": "invalidate",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 4,
+      "range": {
+        "start": 0,
+        "end": 4096
+      },
+      "windows": [
+        {
+          "window_id": "w2",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "d-w1",
+      "kind": "drain",
+      "slot": "slot1",
+      "queue_no": 1,
+      "duration": 3,
+      "windows": [
+        {
+          "window_id": "w1",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "d-w2",
+      "kind": "drain",
+      "slot": "slot1",
+      "queue_no": 1,
+      "duration": 3,
+      "windows": [
+        {
+          "window_id": "w2",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "i-w2-slow",
+      "kind": "invalidate",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 9,
+      "range": {
+        "start": 0,
+        "end": 4096
+      },
+      "windows": [
+        {
+          "window_id": "w2",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}

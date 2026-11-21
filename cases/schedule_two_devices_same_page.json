@@ -1,0 +1,130 @@
+{
+  "case_id": "sched-two-devices-same-page",
+  "windows": [
+    {
+      "window_id": "w1",
+      "start": 0,
+      "duration": 40,
+      "unresponsive_queues": [
+        {
+          "slot": "slot0",
+          "queue_no": 0
+        }
+      ]
+    },
+    {
+      "window_id": "w2",
+      "start": 50,
+      "duration": 40,
+      "unresponsive_queues": [
+        {
+          "slot": "slot1",
+          "queue_no": 1
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "tg1",
+      "device": "dev0",
+      "range": {
+        "start": 0,
+        "end": 4096
+      },
+      "deadline": 120,
+      "from_owner": "tenant-alpha",
+      "to_owner": "tenant-beta",
+      "requirements": [
+        {
+          "kind": "invalidate",
+          "slot": "slot0",
+          "queue_no": 0,
+          "range": {
+            "start": 0,
+            "end": 4096
+          }
+        },
+        {
+          "kind": "invalidate",
+          "slot": "slot1",
+          "queue_no": 1,
+          "range": {
+            "start": 0,
+            "end": 4096
+          }
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "command_id": "dev0-inv-a",
+      "kind": "invalidate",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 6,
+      "range": {
+        "start": 0,
+        "end": 4096
+      },
+      "windows": [
+        {
+          "window_id": "w1",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "dev0-inv-b",
+      "kind": "invalidate",
+      "slot": "slot0",
+      "queue_no": 0,
+      "duration": 6,
+      "range": {
+        "start": 0,
+        "end": 4096
+      },
+      "windows": [
+        {
+          "window_id": "w2",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "dev1-inv-a",
+      "kind": "invalidate",
+      "slot": "slot1",
+      "queue_no": 1,
+      "duration": 6,
+      "range": {
+        "start": 0,
+        "end": 4096
+      },
+      "windows": [
+        {
+          "window_id": "w1",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "command_id": "dev1-inv-b",
+      "kind": "invalidate",
+      "slot": "slot1",
+      "queue_no": 1,
+      "duration": 6,
+      "range": {
+        "start": 0,
+        "end": 4096
+      },
+      "windows": [
+        {
+          "window_id": "w2",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
